@@ -34,13 +34,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
-
-        stickykeyshift_caps: stickykeyshift_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "STICKYKEYSHIFT_CAPS";
-            #binding-cells = <0>;
-            bindings = <&sk LSHFT>, <&caps_word>;
-        };
     };
 
     combos {
@@ -99,10 +92,10 @@
             //                    | GUI |     | DEL |   | ENT |     | ALT |
 
             bindings = <
-&trans                &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0    &kp BSPC
-&trans                &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp HOME  &kp PG_UP
-&stickykeyshift_caps  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &kp END   &kp PG_DN
-                                      &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0    &kp BSPC
+&trans  &trans  &trans  &trans  &trans  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp HOME  &kp PG_UP
+&trans  &trans  &trans  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &kp END   &kp PG_DN
+                        &trans  &trans  &trans    &trans    &trans    &trans
             >;
         };
 
