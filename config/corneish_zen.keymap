@@ -29,6 +29,22 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        SD_num_copy {
+            bindings = <&kp K_PASTE>;
+            key-positions = <14 15>;
+            layers = <1>;
+        };
+
+        DF_num_copy {
+            bindings = <&kp K_COPY>;
+            key-positions = <15 16>;
+            layers = <1>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
