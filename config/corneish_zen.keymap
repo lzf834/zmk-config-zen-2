@@ -18,6 +18,18 @@
     quick-tap-ms = <80>;
 };
 
+&caps_word {
+    continue-list = <UNDERSCORE BACKSPACE DELETE>;
+    mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>;
+};
+
+&sl { ignore-modifiers; };
+
+&sk {
+    quick-release;
+    release-after-ms = <900>;
+};
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
@@ -34,23 +46,40 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        smart_shift: smart_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SMART_SHIFT";
+            bindings = <&sk LSHFT>, <&caps_word>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        qwerty_paste {
+        paste {
             bindings = <&kp LC(V)>;
             key-positions = <3 2>;
             layers = <1>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
         };
 
-        qwerty_copy {
+        copy {
             bindings = <&kp LC(C)>;
             key-positions = <3 4>;
             layers = <1>;
             timeout-ms = <50>;
+            require-prior-idle-ms = <100>;
+        };
+
+        cut {
+            bindings = <&none>;
+            key-positions = <1 2>;
+            layers = <1>;
         };
     };
 
