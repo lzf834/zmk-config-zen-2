@@ -43,12 +43,26 @@
             bindings = <&kp K_PASTE>;
             key-positions = <14 15>;
             layers = <0>;
-            timeout-ms = <100>;
+            timeout-ms = <200>;
         };
 
         DF_num_copy {
             bindings = <&kp K_COPY>;
             key-positions = <15 16>;
+            layers = <0>;
+            timeout-ms = <200>;
+        };
+
+        testpaste {
+            bindings = <&kp LC(V)>;
+            key-positions = <3 2>;
+            layers = <0>;
+            timeout-ms = <100>;
+        };
+
+        testcopy {
+            bindings = <&kp LC(C)>;
+            key-positions = <3 4>;
             layers = <0>;
             timeout-ms = <100>;
         };
