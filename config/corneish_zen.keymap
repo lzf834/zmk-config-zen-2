@@ -77,7 +77,7 @@
         };
 
         cut {
-            bindings = <&none>;
+            bindings = <&kp LC(X)>;
             key-positions = <1 2>;
             layers = <1>;
         };
