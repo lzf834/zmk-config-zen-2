@@ -53,7 +53,7 @@
             bindings = <&lt 2 BACKSPACE>, <&kp BACKSPACE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lt3_hold_delete: lt3_hold_delete {
@@ -62,7 +62,7 @@
             bindings = <&lt 3 DELETE>, <&kp DELETE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lt4_hold_enter: lt4_hold_enter {
@@ -71,7 +71,7 @@
             bindings = <&lt 4 ENTER>, <&kp ENTER>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
         lt1_hold_space: lt1_hold_space {
@@ -80,7 +80,7 @@
             bindings = <&lt 1 SPACE>, <&kp SPACE>;
 
             #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
         };
     };
 
