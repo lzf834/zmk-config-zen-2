@@ -34,6 +34,16 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
         };
+
+        MT_sk_caps: MT_sk_caps {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_SK_CAPS";
+            bindings = <&caps_word>, <&sk>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
+        };
     };
 
     combos {
@@ -75,10 +85,10 @@
             //                    | GUI | SPC/LWR | DEL |   | ENT/3 | BKSPC/RSE  | ALT |
 
             bindings = <
-&kp TAB    &kp Q           &kp W           &kp E             &kp R        &kp T           &kp Y        &kp U        &kp I         &kp O           &kp P                    &kp BSLH
-&kp LCTRL  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G           &kp H        &mt RCTRL J  &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
-&td0       &kp Z           &kp X           &kp C             &kp V        &kp B           &kp N        &kp M        &kp COMMA     &kp DOT         &kp FSLH                 &kp ESC
-                                           &kp LGUI          &lt 1 SPACE  &kp LEFT_ALT    &lt 4 ENTER  &lt 2 BSPC   &lt 3 DELETE
+&kp TAB               &kp Q           &kp W           &kp E             &kp R        &kp T           &kp Y        &kp U        &kp I         &kp O           &kp P                    &kp BSLH
+&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G           &kp H        &mt RCTRL J  &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
+&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B           &kp N        &kp M        &kp COMMA     &kp DOT         &kp FSLH                 &kp ESC
+                                                      &kp LGUI          &lt 1 SPACE  &kp LEFT_ALT    &lt 4 ENTER  &lt 2 BSPC   &lt 3 DELETE
             >;
         };
 
