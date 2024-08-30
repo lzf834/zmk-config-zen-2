@@ -47,10 +47,37 @@
             flavor = "balanced";
         };
 
-        lt_hold_bkspc: lt_hold_bkspc {
+        lt2_hold_bkspc: lt2_hold_bkspc {
             compatible = "zmk,behavior-mod-morph";
-            label = "LT_HOLD_BKSPC";
+            label = "LT2_HOLD_BKSPC";
             bindings = <&lt 2 BACKSPACE>, <&kp BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        lt3_hold_delete: lt3_hold_delete {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT3_HOLD_DELETE";
+            bindings = <&lt 3 DELETE>, <&kp DELETE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        lt4_hold_enter: lt4_hold_enter {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT4_HOLD_ENTER";
+            bindings = <&lt 4 ENTER>, <&kp ENTER>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
+
+        lt1_hold_space: lt1_hold_space {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT1_HOLD_SPACE";
+            bindings = <&lt 1 SPACE>, <&kp SPACE>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
@@ -96,10 +123,10 @@
             //                    | GUI | SPC/LWR | DEL |   | ENT/3 | BKSPC/RSE  | ALT |
 
             bindings = <
-&kp TAB               &kp Q           &kp W           &kp E             &kp R        &kp T           &kp Y        &kp U           &kp I         &kp O           &kp P                    &kp BSLH
-&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G           &kp H        &mt RCTRL J     &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
-&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B           &kp N        &kp M           &kp COMMA     &kp DOT         &kp FSLH                 &kp ESC
-                                                      &kp LGUI          &lt 1 SPACE  &kp LEFT_ALT    &lt 4 ENTER  &lt_hold_bkspc  &lt 3 DELETE
+&kp TAB               &kp Q           &kp W           &kp E             &kp R            &kp T           &kp Y            &kp U            &kp I             &kp O           &kp P                    &kp BSLH
+&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F      &kp G           &kp H            &mt RCTRL J      &mt RSHIFT K      &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
+&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V            &kp B           &kp N            &kp M            &kp COMMA         &kp DOT         &kp FSLH                 &kp ESC
+                                                      &kp LGUI          &lt1_hold_space  &kp LEFT_ALT    &lt4_hold_enter  &lt2_hold_bkspc  &lt3_hold_delete
             >;
         };
 
