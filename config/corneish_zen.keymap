@@ -18,6 +18,8 @@
     quick-tap-ms = <80>;
 };
 
+&sk { quick-release; };
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
