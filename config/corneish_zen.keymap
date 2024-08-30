@@ -46,6 +46,15 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        lt_hold_bkspc: lt_hold_bkspc {
+            compatible = "zmk,behavior-mod-morph";
+            label = "LT_HOLD_BKSPC";
+            bindings = <&lt 2 BACKSPACE>, <&kp BACKSPACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -87,10 +96,10 @@
             //                    | GUI | SPC/LWR | DEL |   | ENT/3 | BKSPC/RSE  | ALT |
 
             bindings = <
-&kp TAB               &kp Q           &kp W           &kp E             &kp R        &kp T           &kp Y        &kp U        &kp I         &kp O           &kp P                    &kp BSLH
-&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G           &kp H        &mt RCTRL J  &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
-&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B           &kp N        &kp M        &kp COMMA     &kp DOT         &kp FSLH                 &kp ESC
-                                                      &kp LGUI          &lt 1 SPACE  &kp LEFT_ALT    &lt 4 ENTER  &lt 2 BSPC   &lt 3 DELETE
+&kp TAB               &kp Q           &kp W           &kp E             &kp R        &kp T           &kp Y        &kp U           &kp I         &kp O           &kp P                    &kp BSLH
+&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F  &kp G           &kp H        &mt RCTRL J     &mt RSHIFT K  &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
+&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V        &kp B           &kp N        &kp M           &kp COMMA     &kp DOT         &kp FSLH                 &kp ESC
+                                                      &kp LGUI          &lt 1 SPACE  &kp LEFT_ALT    &lt 4 ENTER  &lt_hold_bkspc  &lt 3 DELETE
             >;
         };
 
@@ -104,10 +113,10 @@
             //                    | GUI |     | DEL |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1  &kp N2              &kp N3        &kp N4         &kp N5              &kp N6    &kp N7    &kp N8  &kp N9     &kp N0    &kp BSPC
-&trans  &trans  &kp LC(LEFT_ARROW)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(UP_ARROW)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp HOME  &kp PG_UP
-&trans  &trans  &kp LEFT            &kp DOWN      &kp RIGHT      &kp LC(DOWN)        &trans    &trans    &trans  &trans     &kp END   &kp PG_DN
-                                    &trans        &trans         &trans              &trans    &trans    &trans
+&trans  &kp N1           &kp N2              &kp N3        &kp N4         &kp N5              &kp N6    &kp N7    &kp N8  &kp N9     &kp N0    &kp BSPC
+&trans  &kp LC(TAB)      &kp LC(LEFT_ARROW)  &kp UP_ARROW  &kp LC(RIGHT)  &kp LC(UP_ARROW)    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp HOME  &kp PG_UP
+&trans  &kp LC(LS(TAB))  &kp LEFT            &kp DOWN      &kp RIGHT      &kp LC(DOWN)        &trans    &trans    &trans  &trans     &kp END   &kp PG_DN
+                                             &trans        &trans         &trans              &trans    &trans    &trans
             >;
         };
 
