@@ -30,11 +30,11 @@
 
 / {
     behaviors {
-        td0: td0 {
+        td_skshift_caps: td_skshift_caps {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD0";
+            label = "TD_SKSHIFT_CAPS";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT>, <&kp CAPS>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
         };
 
         MT_sk_caps: MT_sk_caps {
@@ -123,10 +123,10 @@
             //                    | GUI | SPC/LWR | DEL |   | ENT/3 | BKSPC/RSE  | ALT |
 
             bindings = <
-&kp TAB               &kp Q           &kp W           &kp E             &kp R            &kp T           &kp Y            &kp U            &kp I             &kp O           &kp P                    &kp BSLH
-&kp LCTRL             &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F      &kp G           &kp H            &mt RCTRL J      &mt RSHIFT K      &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
-&MT_sk_caps 0 LSHIFT  &kp Z           &kp X           &kp C             &kp V            &kp B           &kp N            &kp M            &kp COMMA         &kp DOT         &kp FSLH                 &kp ESC
-                                                      &kp LGUI          &lt1_hold_space  &kp LEFT_ALT    &lt4_hold_enter  &lt2_hold_bkspc  &lt3_hold_delete
+&kp TAB           &kp Q           &kp W           &kp E             &kp R            &kp T           &kp Y            &kp U            &kp I             &kp O           &kp P                    &kp BSLH
+&kp LCTRL         &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LEFT_SHIFT D  &mt LCTRL F      &kp G           &kp H            &mt RCTRL J      &mt RSHIFT K      &mt LEFT_ALT L  &mt RIGHT_GUI SEMICOLON  &kp SQT
+&td_skshift_caps  &kp Z           &kp X           &kp C             &kp V            &kp B           &kp N            &kp M            &kp COMMA         &kp DOT         &kp FSLH                 &kp ESC
+                                                  &kp LGUI          &lt1_hold_space  &kp LEFT_ALT    &lt4_hold_enter  &lt2_hold_bkspc  &lt3_hold_delete
             >;
         };
 
