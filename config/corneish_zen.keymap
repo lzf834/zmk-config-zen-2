@@ -20,6 +20,8 @@
 
 &sk { quick-release; };
 
+&caps_word { mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RCTL|MOD_RSFT|MOD_RALT|MOD_RGUI)>; };
+
 / {
     chosen {
         zmk,matrix_transform = &default_transform;
@@ -35,16 +37,6 @@
             label = "TD_SKSHIFT_CAPS";
             #binding-cells = <0>;
             bindings = <&sk LEFT_SHIFT>, <&caps_word>;
-        };
-
-        MT_sk_caps: MT_sk_caps {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_SK_CAPS";
-            bindings = <&caps_word>, <&sk>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
         };
 
         lt2_hold_bkspc: lt2_hold_bkspc {
